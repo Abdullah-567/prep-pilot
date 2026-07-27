@@ -2,13 +2,6 @@
 
 **An AI-powered study planner and exam practice companion for students preparing for Matric, FSc, O-Level, A-Level, or university exams in Pakistan.**
 
-![Status](https://img.shields.io/badge/status-active-brightgreen)
-![React](https://img.shields.io/badge/frontend-React%2018-61DAFB)
-![Vercel](https://img.shields.io/badge/hosted%20on-Vercel-black)
-![License](https://img.shields.io/badge/license-MIT-blue)
-
----
-
 ## Table of Contents
 
 - [Overview](#overview)
