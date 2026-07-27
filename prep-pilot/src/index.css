@@ -1,0 +1,506 @@
+:root {
+  --ink: #12172B;
+  --ink-soft: #1B2140;
+  --card: #F7F3E8;
+  --card-line: #E4DCC4;
+  --amber: #F2B705;
+  --amber-deep: #C98D02;
+  --teal: #4C9A8E;
+  --pencil-red: #C1443C;
+  --text-on-ink: #EFEDE3;
+  --text-on-ink-dim: #9BA0BE;
+  --text-on-card: #1B1F2E;
+  --text-on-card-dim: #63604F;
+
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  --radius: 10px;
+  --shadow-card: 0 8px 24px rgba(18, 23, 43, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--text-on-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: var(--amber);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 2px;
+}
+
+.app-shell {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 28px 20px 80px;
+}
+
+/* ---------- Nav ---------- */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 36px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(239, 237, 227, 0.12);
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.brand-dot {
+  color: var(--amber);
+}
+
+.nav-tabs {
+  display: flex;
+  gap: 6px;
+  background: var(--ink-soft);
+  padding: 4px;
+  border-radius: 999px;
+}
+
+.nav-tab {
+  background: transparent;
+  border: none;
+  color: var(--text-on-ink-dim);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.nav-tab.active {
+  background: var(--amber);
+  color: var(--ink);
+}
+
+.nav-tab:hover:not(.active) {
+  color: var(--text-on-ink);
+}
+
+/* ---------- Typography ---------- */
+h1, h2, h3 {
+  font-family: var(--font-display);
+  margin: 0 0 8px;
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: 34px; font-weight: 700; }
+h2 { font-size: 22px; font-weight: 600; }
+h3 { font-size: 17px; font-weight: 600; }
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--amber);
+  margin-bottom: 6px;
+  display: block;
+}
+
+.subtext {
+  color: var(--text-on-ink-dim);
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0 0 24px;
+  max-width: 60ch;
+}
+
+/* ---------- Index card panel ---------- */
+.card {
+  background: var(--card);
+  color: var(--text-on-card);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--card-line);
+}
+
+.card + .card {
+  margin-top: 16px;
+}
+
+.card-dashed {
+  border-style: dashed;
+}
+
+/* ---------- Form elements ---------- */
+.field {
+  margin-bottom: 16px;
+}
+
+.field label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-on-card-dim);
+  margin-bottom: 6px;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--card-line);
+  background: #fff;
+  color: var(--text-on-card);
+  font-family: var(--font-body);
+  font-size: 14px;
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.row > .field {
+  flex: 1;
+  min-width: 160px;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  font-weight: 600;
+  font-size: 14px;
+  padding: 11px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.1s ease, opacity 0.15s ease;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--amber);
+  color: var(--ink);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--amber-deep);
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid rgba(239, 237, 227, 0.25);
+  color: var(--text-on-ink);
+}
+
+.btn-ghost:hover:not(:disabled) {
+  border-color: var(--amber);
+  color: var(--amber);
+}
+
+.btn-card {
+  background: var(--ink);
+  color: var(--text-on-ink);
+}
+
+.btn-card:hover:not(:disabled) {
+  background: var(--ink-soft);
+}
+
+.btn-danger {
+  background: transparent;
+  color: var(--pencil-red);
+  border: 1px solid rgba(193, 68, 60, 0.4);
+}
+
+/* ---------- Subject list ---------- */
+.subject-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--card-line);
+}
+
+.subject-item:last-child {
+  border-bottom: none;
+}
+
+.subject-name {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.subject-meta {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-on-card-dim);
+}
+
+.topic-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #fff;
+  border: 1px solid var(--card-line);
+  border-radius: 999px;
+  padding: 5px 12px 5px 12px;
+  font-size: 13px;
+  margin: 4px 6px 0 0;
+}
+
+.topic-chip button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--pencil-red);
+  font-size: 13px;
+  line-height: 1;
+  padding: 0;
+}
+
+/* ---------- Countdown / stats ---------- */
+.stat-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.stat-box {
+  flex: 1;
+  min-width: 130px;
+  background: var(--ink-soft);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+}
+
+.stat-value {
+  font-family: var(--font-mono);
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--amber);
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--text-on-ink-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 2px;
+}
+
+/* ---------- Plan list ---------- */
+.plan-day {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--card-line);
+}
+
+.plan-day:last-child { border-bottom: none; }
+
+.plan-date {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-on-card-dim);
+  min-width: 96px;
+  padding-top: 3px;
+}
+
+.plan-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.plan-tag {
+  background: var(--ink);
+  color: var(--text-on-ink);
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+
+.plan-tag.weak {
+  background: var(--pencil-red);
+}
+
+/* ---------- Quiz / flashcard ---------- */
+.quiz-progress {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-on-ink-dim);
+  margin-bottom: 10px;
+}
+
+.option-btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 12px 14px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  border: 1px solid var(--card-line);
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.option-btn:hover {
+  border-color: var(--teal);
+}
+
+.option-btn.selected {
+  border-color: var(--teal);
+  background: #eaf5f3;
+}
+
+.option-btn.correct {
+  border-color: var(--teal);
+  background: #dff1ee;
+}
+
+.option-btn.incorrect {
+  border-color: var(--pencil-red);
+  background: #fbe9e8;
+}
+
+.feedback-box {
+  margin-top: 14px;
+  padding: 14px;
+  border-radius: 8px;
+  background: #fff;
+  border-left: 3px solid var(--teal);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.feedback-box.wrong {
+  border-left-color: var(--pencil-red);
+}
+
+.score-pill {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--amber);
+}
+
+/* ---------- Dashboard bars ---------- */
+.bar-row {
+  margin-bottom: 14px;
+}
+
+.bar-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.bar-track {
+  height: 10px;
+  border-radius: 6px;
+  background: var(--card-line);
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  background: var(--teal);
+  border-radius: 6px;
+}
+
+.bar-fill.weak {
+  background: var(--pencil-red);
+}
+
+/* ---------- Empty states ---------- */
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-on-card-dim);
+}
+
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(0,0,0,0.15);
+  border-top-color: var(--teal);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.error-box {
+  background: #fbe9e8;
+  border: 1px solid var(--pencil-red);
+  color: #7a2b26;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 600px) {
+  .nav { flex-direction: column; align-items: flex-start; gap: 14px; }
+  h1 { font-size: 26px; }
+}
